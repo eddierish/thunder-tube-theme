@@ -12,9 +12,32 @@
     <?php wp_head(); ?>
   </head>
 
-  <body>
+  <body <?php body_class(); ?>>
 
-    <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
+    <?php
+
+      $defaults = array(
+        'theme_location'  => 'primary-menu',
+        'menu'            => '',
+        'container'       => 'nav',
+        'container_class' => '',
+        'container_id'    => '',
+        'menu_class'      => 'main-navigation',
+        'menu_id'         => '',
+        'echo'            => true,
+        'fallback_cb'     => 'wp_page_menu',
+        'before'          => '',
+        'after'           => '',
+        'link_before'     => '',
+        'link_after'      => '',
+        'items_wrap'      => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+        'depth'           => 0,
+        'walker'          => ''
+      );
+      wp_nav_menu( $defaults );
+   ?>
+
+    <!-- <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -45,4 +68,4 @@
           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       </div>
-    </nav>
+    </nav> -->
