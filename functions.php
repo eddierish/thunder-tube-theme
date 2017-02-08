@@ -41,3 +41,47 @@ function ttt_add_google_fonts() {
   wp_enqueue_style( 'googleFonts');
 }
 add_action( 'wp_enqueue_scripts', 'ttt_add_google_fonts' );
+
+/*-------------------------------------
+||
+|| Widgets
+||
+-------------------------------------*/
+function create_widget($name, $id, $description) {
+    register_sidebar(array(
+      'name' => __( $name ),
+      'id'   => $id,
+      'description' => __( $description ),
+      'before_widget' => '<div class="widget">',
+      'after_widget' => '</div>',
+      'before_title' => '<h2>',
+      'after_title' => '</h2>'
+    ));
+}
+function create_sidebar_widget($name, $id, $description) {
+    register_sidebar(array(
+      'name' => __( $name ),
+      'id'   => $id,
+      'description' => __( $description ),
+      'before_widget' => '<div class="widget sidebar">',
+      'after_widget' => '</div>',
+      'before_title' => '<h3>',
+      'after_title' => '</h3>'
+    ));
+}
+
+create_widget( 'Front Page Left', 'front-left', 'Displays on the left of the hompage');
+create_widget( 'Front Page Center', 'front-center', 'Displays on the center of the hompage');
+create_widget( 'Front Page Right', 'front-right', 'Displays on the right of the hompage');
+
+// create sidebar
+create_sidebar_widget( 'Page Sidebar', 'page', 'Displays on side of pages with sidebar');
+?>
+
+
+
+
+
+
+
+

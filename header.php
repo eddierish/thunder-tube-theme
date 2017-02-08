@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-
-    <title>Jumbotron Template for Bootstrap</title>
+    <link rel="icon" href="<?php bloginfo('template_directory'); ?>/img/favicon.ico">
+<?php wp_title( '|', true, 'right' ); ?></title>
 
     <?php wp_head(); ?>
   </head>
